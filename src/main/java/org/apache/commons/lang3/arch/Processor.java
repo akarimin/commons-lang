@@ -106,6 +106,65 @@ public class Processor {
         UNKNOWN
     }
 
+    /**
+     * The {@link Key} enum defines keys of a microprocessor.
+     * The following keys are defined:
+     * <ul>
+     *     <li>AMD64</li>
+     *     <li>EM64T</li>
+     *     <li>I386</li>
+     *     <li>I486</li>
+     *     <li>I586</li>
+     *     <li>I686</li>
+     *     <li>IA64</li>
+     *     <li>IA64_32</li>
+     *     <li>IA64N</li>
+     *     <li>IA64W</li>
+     *     <li>PENTIUM</li>
+     *     <li>POWER</li>
+     *     <li>POWERPC</li>
+     *     <li>POWERPC64</li>
+     *     <li>POWER64</li>
+     *     <li>POWER_PC</li>
+     *     <li>POWER_PC64</li>
+     *     <li>POWER_RS</li>
+     *     <li>POWER_RS64</li>
+     *     <li>PPC</li>
+     *     <li>PPC_64</li>
+     *     <li>UNIVERSAL</li>
+     *     <li>X86</li>
+     *     <li>X86_6</li>
+     * </ul>
+     */
+    public enum Key {
+
+        AMD64,
+        EM64T,
+        I386,
+        I486,
+        I586,
+        I686,
+        IA64,
+        IA64_32,
+        IA64N,
+        IA64W,
+        PENTIUM,
+        POWER,
+        POWERPC,
+        POWERPC64,
+        POWER64,
+        POWER_PC,
+        POWER_PC64,
+        POWER_RS,
+        POWER_RS64,
+        PPC,
+        PPC_64,
+        UNIVERSAL,
+        X86,
+        X86_64
+
+    }
+
     private final Arch arch;
     private final Type type;
 
