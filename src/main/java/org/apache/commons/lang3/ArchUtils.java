@@ -51,32 +51,35 @@ public class ArchUtils {
 
     private static void init_X86_32Bit() {
         final Processor processor = new Processor(Processor.Arch.BIT_32, Processor.Type.X86);
-        addProcessors(processor, "x86", "i386", "i486", "i586", "i686", "pentium");
+        addProcessors(processor, Processor.Key.X86, Processor.Key.I386, Processor.Key.I486, Processor.Key.I586,
+            Processor.Key.I686, Processor.Key.PENTIUM);
     }
 
     private static void init_X86_64Bit() {
         final Processor processor = new Processor(Processor.Arch.BIT_64, Processor.Type.X86);
-        addProcessors(processor, "x86_64", "amd64", "em64t", "universal");
+        addProcessors(processor, Processor.Key.X86_64, Processor.Key.AMD64, Processor.Key.EM64T, Processor.Key.UNIVERSAL);
     }
 
     private static void init_IA64_32Bit() {
         final Processor processor = new Processor(Processor.Arch.BIT_32, Processor.Type.IA_64);
-        addProcessors(processor, "ia64_32", "ia64n");
+        addProcessors(processor, Processor.Key.IA64_32, Processor.Key.IA64N);
     }
 
     private static void init_IA64_64Bit() {
         final Processor processor = new Processor(Processor.Arch.BIT_64, Processor.Type.IA_64);
-        addProcessors(processor, "ia64", "ia64w");
+        addProcessors(processor, Processor.Key.IA64, Processor.Key.IA64W);
     }
 
     private static void init_PPC_32Bit() {
         final Processor processor = new Processor(Processor.Arch.BIT_32, Processor.Type.PPC);
-        addProcessors(processor, "ppc", "power", "powerpc", "power_pc", "power_rs");
+        addProcessors(processor, Processor.Key.PPC, Processor.Key.POWER, Processor.Key.POWERPC,
+            Processor.Key.POWER_PC, Processor.Key.POWER_RS);
     }
 
     private static void init_PPC_64Bit() {
         final Processor processor = new Processor(Processor.Arch.BIT_64, Processor.Type.PPC);
-        addProcessors(processor, "ppc64", "power64", "powerpc64", "power_pc64", "power_rs64");
+        addProcessors(processor, Processor.Key.PPC_64, Processor.Key.POWER64, Processor.Key.POWERPC64,
+            Processor.Key.POWER_PC64, Processor.Key.POWER_RS64);
     }
 
     /**
@@ -100,8 +103,8 @@ public class ArchUtils {
      * @param processor The {@link Processor} to add.
      * @throws IllegalStateException If the key already exists.
      */
-    private static void addProcessors(final Processor processor, final String... keys) {
-        Stream.of(keys).forEach(e -> addProcessor(e, processor));
+    private static void addProcessors(final Processor processor, final Processor.Key... keys) {
+        Stream.of(keys).forEach(e -> addProcessor(e.toString().toLowerCase(), processor));
     }
 
     /**
